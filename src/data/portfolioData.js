@@ -576,3 +576,65 @@ export const activityPortfolio = [
     images: ['2024학년도 2학기 학급회장.png'],
   },
 ];
+
+// ============================================================
+// 프로젝트 포트폴리오 (PROJECT 섹션용)
+// images: 아키텍처 이미지는 반드시 마지막 순서
+// ============================================================
+export const projectPortfolio = [
+  {
+    id: 'yagsok-app',
+    title: '약쏙',
+    subtitle: '앱 (Flutter / Node.js)',
+    period: '2주',
+    team: '3인',
+    year: 2026,
+    award: '미래유망 고졸인력양성사업 프로젝트 챌린지 최우수상 (1위)',
+    goal: '고령화 사회에서 노인층이 병원 처방 내용을 이해하기 어렵다는 문제에 주목했다. 진료 음성을 실시간으로 녹음·분석하여 복약 일정과 주의사항을 쉽게 확인할 수 있는 모바일 앱 개발을 목표로 했다.',
+    role: 'Flutter/Node.js 풀스택 구조에서 백엔드를 담당했다. JWT 인증, REST API 설계, AWS RDS(MySQL) 데이터 관리, Solapi SMS 연동 등 서버 핵심 로직 전반을 구현했다. OpenAI Whisper·GPT API 연동 및 공공데이터 API 파싱 처리도 백엔드에서 직접 설계했다.',
+    features: [
+      '진료기록 녹음 & 요약 — Whisper API로 음성 텍스트 변환 후 GPT 요약',
+      '복약 일정 관리 — 처방 약 복용 시간 자동 등록 및 알림',
+      '증상 분석 — AI 기반 증상 입력 분석 및 관련 정보 제공',
+      '날씨 / 약국 / 유행병 정보 — 공공데이터 API 연동',
+      '보호자 알림 — Solapi SMS API로 복약 알림 문자 발송',
+      '카카오 로그인 — 카카오 OAuth SDK 간편 소셜 로그인',
+    ],
+    challenge: 'S3 업로드 구조에서 서버 부하가 심각하게 발생했다. Presigned URL 방식을 도입하여 클라이언트가 서버를 거치지 않고 S3에 직접 업로드하도록 아키텍처를 전면 재설계했다.',
+    techs: ['Flutter', 'Node.js', 'JWT', 'REST API', 'AWS RDS(MySQL)', 'AWS S3', 'OpenAI Whisper', 'GPT API', 'Solapi SMS', 'Kakao OAuth', '공공데이터 API'],
+    images: [
+      'Project약쏙.png',
+      'Project약쏙1.png',
+      'Project약쏙2.png',
+      'Project약쏙3.png',
+      'Project약쏙4.png',
+      'Project약쏙아키텍처.png',
+    ],
+  },
+  {
+    id: 'yagsok-gpt',
+    title: '약쏙',
+    subtitle: 'GPT Apps (MCP / React)',
+    period: '2주',
+    team: '3인',
+    year: 2026,
+    award: '미래유망 고졸인력양성사업 프로젝트 챌린지 최우수상 (1위)',
+    goal: 'ChatGPT 대화창 하나로 약품 추천과 약국 탐색을 동시에 해결하는 서비스 구현. 앱 설치 없이 GPT APPS SDK를 통해 공공 의약품 정보와 지도 기반 약국 탐색을 제공하는 것을 목표로 했다.',
+    role: 'React로 위젯 UI를 구성하고, AWS Lambda에서 공공API(의약품·약국) 호출 및 데이터 가공 로직을 처리했다. Vercel에 MCP 서버(api/mcp.js)를 배포하여 ChatGPT GPT APPS SDK와 연결했으며, 증상 정규화·거리순 정렬 등 핵심 필터링 로직을 Lambda에서 직접 구현했다.',
+    features: [
+      '약품 추천 — 증상 입력 시 MCP를 통해 공공API 기반 약품 정보 자동 추천',
+      '약국 탐색 — 현재 위치 기반 주변 약국 검색 및 Leaflet 지도 시각화',
+      '자동 도구 선택 — ChatGPT가 자연어 입력에 따라 적합한 Tool을 자동 선택',
+      '앱 설치 불필요 — GPT APPS SDK 기반, 대화창 하나로 모든 기능 이용',
+    ],
+    challenge: 'ChatGPT가 두 가지 Tool을 정확히 자동 선택하도록 MCP 스펙을 설계하는 것이 까다로웠다. Tool description과 파라미터 명세를 반복적으로 수정하며 의도한 대로 도구가 호출되는 구조를 완성했다.',
+    techs: ['React', 'MCP', 'AWS Lambda', 'Vercel', 'ChatGPT GPT APPS SDK', 'Leaflet', '공공API(의약품)', '공공API(약국)'],
+    images: [
+      'Project약쏙(GPT Apps)1.png',
+      'Project약쏙(GPT Apps)2.png',
+      'Project약쏙(GPT Apps)3.png',
+      'Project약쏙(GPT Apps)4.png',
+      'Project약쏙(GPT Apps)아키텍처.png',
+    ],
+  },
+];
