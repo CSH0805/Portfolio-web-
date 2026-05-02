@@ -164,6 +164,22 @@ function ProjectCard({ item }) {
                 ))}
               </div>
             </div>
+
+            {/* PDF 다운로드 버튼 */}
+            {item.pdfFile && (
+              <a
+                href={`${import.meta.env.BASE_URL}${item.pdfFile}`}
+                download
+                className="mt-auto flex w-fit items-center gap-2 rounded-xl border border-rose-400/30 bg-rose-400/10 px-5 py-2.5 text-sm font-semibold text-rose-300 transition-colors hover:bg-rose-400/20"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                리서치 포스터 PDF 다운로드
+              </a>
+            )}
           </div>
         </div>
       </div>
