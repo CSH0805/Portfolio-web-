@@ -221,7 +221,7 @@ export default function ChatbotSection() {
       <button
         onClick={() => setIsOpen(o => !o)}
         aria-label="최선호 AI 백과사전 열기"
-        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-indigo-600 text-white shadow-lg shadow-indigo-500/30 transition-all hover:bg-indigo-500 hover:scale-105 active:scale-95"
+        className="fixed bottom-5 right-4 z-50 flex h-13 w-13 items-center justify-center rounded-full bg-indigo-600 text-white shadow-lg shadow-indigo-500/30 transition-all hover:bg-indigo-500 hover:scale-105 active:scale-95 sm:bottom-6 sm:right-6 sm:h-14 sm:w-14"
       >
         {isOpen ? (
           /* X 아이콘 */
@@ -236,10 +236,20 @@ export default function ChatbotSection() {
         )}
       </button>
 
+      {/* 모바일 배경 딤 */}
+      {isOpen && (
+        <div className="fixed inset-0 z-40 bg-black/50 sm:hidden" onClick={() => setIsOpen(false)} />
+      )}
+
       {/* ── 채팅 패널 ── */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-50 flex w-[360px] max-w-[calc(100vw-3rem)] flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#111] shadow-2xl shadow-black/50"
-          style={{ height: '520px' }}
+        <div className={[
+          'fixed z-50 flex flex-col overflow-hidden border border-white/10 bg-[#111] shadow-2xl shadow-black/50',
+          // 모바일: 하단 시트 (전체 너비, 80vh)
+          'bottom-0 left-0 right-0 h-[80vh] rounded-t-2xl',
+          // sm+: 플로팅 패널 (우하단 고정)
+          'sm:bottom-24 sm:left-auto sm:right-6 sm:h-[520px] sm:w-[360px] sm:rounded-2xl',
+        ].join(' ')}
         >
           {/* 헤더 */}
           <div className="flex items-center gap-3 border-b border-white/10 bg-indigo-600/10 px-4 py-3.5">

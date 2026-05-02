@@ -44,7 +44,7 @@ export default function ClosingSection() {
         CHOI SUN HO
       </p>
 
-      <div className="relative mx-auto max-w-4xl px-6 py-28 flex flex-col items-center text-center gap-10">
+      <div className="relative mx-auto max-w-4xl px-4 py-16 flex flex-col items-center text-center gap-8 sm:px-6 sm:py-24 sm:gap-10">
 
         {/* 상단 메시지 */}
         <div>
@@ -60,7 +60,7 @@ export default function ClosingSection() {
         </div>
 
         {/* 좌우명 */}
-        <div className="rounded-2xl border border-white/8 bg-white/[0.03] px-10 py-6">
+        <div className="w-full max-w-sm rounded-2xl border border-white/8 bg-white/[0.03] px-6 py-5 sm:px-10 sm:py-6">
           <p className="text-xs text-white/30 uppercase tracking-widest mb-2">좌우명</p>
           <p className="text-2xl font-bold text-white">" 노력이 결과다 "</p>
           <p className="mt-1 text-sm text-white/40">— {profile.nameKo} / {profile.nameEn}</p>
