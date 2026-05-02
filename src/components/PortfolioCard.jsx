@@ -52,7 +52,7 @@ function Carousel({ images }) {
           key={idx}
           src={img}
           alt=""
-          className="h-full w-full object-cover transition-opacity duration-300"
+          className="h-full w-full object-contain transition-opacity duration-300"
         />
       ) : (
         <div className="flex h-full w-full items-center justify-center text-white/20 text-5xl">📋</div>
@@ -109,8 +109,8 @@ export default function PortfolioCard({ item, index }) {
         className={`flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm
           md:flex-row ${isReversed ? 'md:flex-row-reverse' : ''}`}
       >
-        {/* 이미지 / 캐러셀 */}
-        <div className="relative h-64 w-full shrink-0 overflow-hidden md:h-auto md:w-[42%]">
+        {/* 이미지 / 캐러셀 — 고정 높이로 이미지 교체 시 레이아웃 흔들림 방지 */}
+        <div className="relative h-64 w-full shrink-0 overflow-hidden md:h-[360px] md:w-[42%]">
           <Carousel images={item.images ?? []} />
           {/* 카테고리 뱃지 */}
           <span className={`absolute left-4 top-4 z-10 rounded-full border px-3 py-1 text-xs font-semibold backdrop-blur-sm ${catClass}`}>
