@@ -49,6 +49,23 @@ export default function HeroSection() {
           클라우드 & AI 기반 백엔드를 꿈꾸는 개발자 —{' '}
           <span className="font-semibold text-white">노력이 결과다.</span>
         </p>
+
+        {/* PDF 다운로드 버튼 */}
+        <div className="mt-7 flex flex-col items-center gap-2">
+          <a
+            href={`${import.meta.env.BASE_URL}최선호PORTFOLIO.pdf`}
+            download="최선호PORTFOLIO.pdf"
+            className="flex items-center gap-2.5 rounded-full border border-white/25 bg-white/10 px-6 py-2.5 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20 hover:border-white/40"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Portfolio PDF 다운로드
+          </a>
+          <p className="text-xs text-white/35">최선호의 PORTFOLIO를 PDF 버전으로 받아보세요</p>
+        </div>
       </div>
 
       {/* 수치 데이터 카드 */}
